@@ -1,0 +1,150 @@
+globals:
+1.__dirname-path to current directoty
+2.__filename-file name
+3.require-function to use modules(common js)
+4.module-info about current module(file)
+5.process-info about env where the program is being executed
+
+//modules
+const amey='amey'
+const ishita='ishita'
+const hip=(name) => {
+    console.log('kashi aahes',(name))
+}
+
+hip("girish")
+hip(amey)
+hip(ishita)
+
+app.js-
+//modules
+//common js
+const names=require('./practice1')
+const hip = require('./practice2')
+const sub=require('./new')
+console.log(sub)
+hip("girish")
+hip(names.amey)
+hip(names.ishita)
+
+
+practice1-1
+//local
+const secret='super secret'
+//share
+const amey='amey'
+const ishita='ishita'
+module.exports={amey,ishita}
+
+
+practice2-
+const hip=(name) => {
+    console.log('kashi aahes',(name))
+}
+module.exports=hip
+
+new-
+module.exports.subjects=["m4","os"]
+const person=
+{
+    name:'auto',
+}
+module.exports.p=person
+
+grenade-(add + in case of $ coz after it gives the req statement)      
+const a1=18
+const a2=20
+function addvalues()
+{
+    console.log(`sum of the age is ${a1+a2}`)
+}
+module.imports=(addvalues())
+
+const os =require('os')
+const user=os.userInfo()
+console.log(user)
+//method returs the system uptime in seconds
+console.log(`the system uptie in seconds is :${os.uptime()}seconds`)
+const currentos={
+    name:os.type(),
+    release:os.release(),
+    totalmem:os.totalmem(),
+    freemem:os.freemem(),
+}
+console.log(currentos)
+
+
+path module-
+
+
+
+fs module(sync)-
+the readfile is used to read the file sontent 
+to create a text fil and saving the ressult-
+const {readFileSync,writeFileSync}= require('fs')
+
+const first=readFileSync('./content/first.txt','utf8')
+const second=readFileSync('./content/second.txt','utf8')
+
+writeFileSync('./content/result-sync.txt',
+    `here is the result ${first},${second}`,
+    {fag:'a'}//to append the file
+    )
+
+fs module asnychrous
+const { readFile , writeFile}=require('fs')
+
+readFile=("./content/first.txt",'utf8',(err,result) => {
+    if(err)
+    {
+        console.log(err)
+    }
+    else
+    {
+        console.log(result)
+    }
+}
+)
+
+asnych vs sync
+const { readFileSync,writeFileSync}=require('fs')
+console.log('start')
+const first=readFileSync("./content/first.txt",'utf8')
+const second=writeFileSync("./content/second.txt",'utf8')
+
+writeFileSync(
+"./content/result-sync.txt",
+`here is the result: ${first},${second}`,
+{flag : 'a'}
+)
+console.log("done with  this task")
+console.log('starting the next one')
+
+http
+const http= require('http')
+const server=http.createServer((req,res) => {
+    if (req.url==='/')
+    {
+        res.end('welcome to our homepage')
+    }
+    if(req.url=="/about")
+    {
+        res.end('here is our short history')
+    }
+    res.end(`
+        <h1>Oops!</h1>
+        <p>not found</p>
+        <a href="/">back home</a>
+    `)
+})
+server.listen(5000)
+
+NPM----
+1.LOADASH 
+const _=require('lodash')
+const items=[1, [2, [3, [4]]]]
+const nitems= _.flattenDeep(items)
+console.log(nitems)
+   
+
+
